@@ -1,0 +1,42 @@
+//div[@class="xcpsgoo x14yjl9h xudhj91 x18nykt9 xww2gxu xpgaw4o xyamay9 x1pi30zi x1l90r2v x1swvt13 x10l6tqk x1puwpt7"]
+
+--------------------------------------------------------------------------------------------------------
+NOTIFICACOES
+# Click Element    ${PAGINA INICIAL}
+    # Wait Until Page Contains Element    ${ATIVAR}    10S
+    # Click Element    ${AGORA_NAO}
+    # Wait Until Page Contains Element   ${LOGO_INSTAGRAM}    10s
+
+---------------------------------------------------------------------------------------------------------
+# Test Setup    Open Browser    https://www.instagram.com/
+# Test Teardown    Close Browser
+
+-----------------------------------------------------------------------------------------
+#notificações
+#   ${NOTIFICACOES}    //div[@class='_a9-v'][contains(.,'Ativar notificaçõesSabe de imediato quando alguém te segue ou deixa gostos e comentários nas tuas fotos.AtivarAgora Não')]
+#Button ativar
+#    //button[@class='_a9-- _a9_0'][contains(.,'Ativar')]
+#button "Agora não"
+#   ${AGORA_NAO}    //button[@class='_a9-- _a9_1'][contains(.,'Agora Não')]
+
+-------------------------------------------------------------------------------------
+{IF1}    IF1
+    ${IF2}    IF2    
+    
+    IF    ${IF1}
+        Pesquisar usuario
+    END
+    IF    ${IF2}
+        notificacoes
+    END
+
+IF1
+    Wait Until Page Contains Element     ${LOGO_INSTAGRAM}
+     
+IF2
+    Wait Until Page Contains Element    ${NOTIFICACOES}
+
+notificacoes
+    Wait Until Page Contains Element    ${NOTIFICACOES}
+    Click Element    ${AGORA_NAO} 
+    ------------------------------------------------------------------------------------------------------------------
